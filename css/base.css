@@ -4,6 +4,10 @@
    3. #FFD54A : yellow, nav links (easy to see on dark blue) and hover highlight
    4. #F7F3EA : milky white, background of cards, menu table and form so the text is easy to read
 */
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #A9D6F5;
     color: #1F4E8C;
