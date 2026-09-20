@@ -89,3 +89,8 @@
 h2 + p {
     font-size: 20px;
 }
+
+input[type="email"] {
+    border: 2px solid #1F4E8C;
+    padding: 4px;
+}
