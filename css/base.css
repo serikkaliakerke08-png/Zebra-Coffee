@@ -1,0 +1,9 @@
+/* PALETTE
+   1. #A9D6F5 : light blue, page background
+   2. #1F4E8C : dark blue, header, nav and body text
+   3. #FFD54A : yellow, nav links (easy to see on dark blue) and hover highlight
+   4. #F7F3EA : milky white, background of cards, menu table and form so the text is easy to read
+*/
+h1 {
+    color: brown;
+}
