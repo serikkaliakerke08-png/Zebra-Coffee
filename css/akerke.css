@@ -85,3 +85,7 @@
     width: 220px;
     border: 2px solid navy;
 }
+
+h2 + p {
+    font-size: 20px;
+}
