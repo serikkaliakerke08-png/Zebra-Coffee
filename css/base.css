@@ -4,6 +4,8 @@
    3. #FFD54A : yellow, nav links (easy to see on dark blue) and hover highlight
    4. #F7F3EA : milky white, background of cards, menu table and form so the text is easy to read
 */
+
+/* *: universal selector, matches every element on the page */
 * {
     box-sizing: border-box;
 }
@@ -63,6 +65,7 @@ footer a {
     color: #FFD54A;
 }
 
+/* main: type selector. Centring technique: margin auto, because main has a max-width, so the free space on both sides is split equally */
 main {
     max-width: 1000px;
     margin: 0 auto;

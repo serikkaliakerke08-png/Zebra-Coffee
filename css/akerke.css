@@ -1,3 +1,5 @@
+/* Margin collapse: in Opening Hours the bottom margin of the paragraph and the top margin of the list meet and collapse into one gap instead of adding up */
+
 .info-block {
     margin-bottom: 0;
     padding: 16px;
@@ -5,15 +7,17 @@
     border-radius: 8px;
 }
 
+/* #location: id selector, because this section exists once on the page and the "Go to Location" link points to it */
 #location {
     border-left: 6px solid #1F4E8C;
 }
 
+/* #contact-form: id selector, because this section exists once on the page and the "Go to Visitor Contact" link points to it */
 #contact-form {
     border-left: 6px solid #1F4E8C;
 }
 
-/* .photo-card: class selector, matches every figure on the visit page */
+/* position: static is the default value, elements stay in normal flow; I only change it where a badge or panel needs it */
 .photo-card {
     margin: 0;
     padding: 12px;
@@ -21,9 +25,12 @@
     display: flex;
     flex-direction: column;
     flex: 1 1 200px;
+
+     /* relative makes the card the containing block for the badge */
     position: relative;
 }
 
+/* .photo-card::before: pseudo-element, a badge in the corner of each photo, placed with position: absolute */
 .photo-card::before {
     content: "Zebra Coffee";
     position: absolute;
@@ -75,6 +82,7 @@
     font-weight: 700;
 }
 
+/* .contact-panel: position: fixed keeps the panel in the corner of the window while the page scrolls */
 .contact-panel {
     background-color: rgba(247, 243, 234, 0.95);
     padding: 16px;
@@ -86,39 +94,48 @@
     border: 2px solid navy;
 }
 
+/* h2 + p: adjacent sibling selector, matches the paragraph right after each h2 */
 h2 + p {
     font-size: 18px;
 }
 
+/* input[type="email"]: attribute selector, matches only the input whose type is email */
 input[type="email"] {
     border: 2px solid #1F4E8C;
     padding: 4px;
 }
 
+/* input:focus: pseudo-class, matches the input the cursor is in */
 input:focus {
     background-color: #A9D6F5;
     outline: 3px solid #1F4E8C;
 }
-
+/* nav li:first-child a: pseudo-class, matches the link in the first menu item */
 nav li:first-child a {
     font-weight: 700;
 }
 
+/* header centring: flex, because the title and the menu stack in a column and align-items centres them */
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+
+/* footer centring: grid, because place-items: center centres the content in one line */
 footer {
     display: grid;
     place-items: center;
 }
 
+/* Specificity (0,2,0): wins over the rule below, so the two "Go to" links stay underlined */
 .info-block .jump-link{
     text-decoration: underline;
 }
 
+
+/* Specificity (0,1,1): loses to the rule above for .jump-link, but removes the underline from other links in .info-block */
 .info-block a {
     text-decoration: none;
 }
