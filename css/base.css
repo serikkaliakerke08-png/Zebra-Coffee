@@ -18,7 +18,7 @@ body {
 
 header {
     background-color: #1F4E8C;
-    color: #FFFFFF;
+    color: #F7F3EA;
     padding: 20px;
     text-align: center;
 }
@@ -41,11 +41,12 @@ nav ul {
     padding: 0;
 }
 
-/* nav a:hover: pseudo-class, matches a menu link while the mouse is over it */
 nav a {
     color: #FFD54A;
     text-decoration: none;
 }
+
+/* nav a:hover: pseudo-class, matches a menu link while the mouse is over it */
 nav a:hover {
     color: #F7F3EA;
 }
