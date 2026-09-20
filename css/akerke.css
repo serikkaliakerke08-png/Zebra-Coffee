@@ -23,6 +23,16 @@
     flex: 1 1 200px;
 }
 
+.photo-card::before {
+    content: "Zebra Coffee";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #FFD54A;
+    color: #1F4E8C;
+    padding: 4px 8px;
+}
+
 /* .photo-gallery: flex fits here because the cards sit in one row, grow, shrink and wrap */
 .photo-gallery {
     display: flex;
