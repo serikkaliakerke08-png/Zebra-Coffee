@@ -74,3 +74,9 @@
     white-space: nowrap;
     font-weight: 700;
 }
+
+.contact-panel {
+    background-color: rgba(247, 243, 234, 0.95);
+    padding: 16px;
+    border-radius: 8px;
+}
