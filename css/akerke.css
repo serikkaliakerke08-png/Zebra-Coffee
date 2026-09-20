@@ -12,3 +12,10 @@
 #contact-form {
     border-left: 6px solid #1F4E8C;
 }
+
+/* .photo-card: class selector, matches every figure on the visit page */
+.photo-card {
+    margin: 0 0 20px 0;
+    padding: 12px;
+    border: 2px solid #1F4E8C;
+}
