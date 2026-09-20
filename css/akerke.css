@@ -87,7 +87,7 @@
 }
 
 h2 + p {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 input[type="email"] {
@@ -115,7 +115,7 @@ footer {
     place-items: center;
 }
 
-.jump-link {
+.info-block .jump-link{
     text-decoration: underline;
 }
 
