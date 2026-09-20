@@ -4,6 +4,42 @@
    3. #FFD54A : yellow, nav links (easy to see on dark blue) and hover highlight
    4. #F7F3EA : milky white, background of cards, menu table and form so the text is easy to read
 */
-h1 {
-    color: brown;
+body {
+    background-color: #A9D6F5;
+    color: #1F4E8C;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+header {
+    background-color: #1F4E8C;
+    color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+
+/* nav ul: descendant selector, matches the list inside nav */
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* nav a:hover: pseudo-class, matches a menu link while the mouse is over it */
+nav a {
+    color: #FFD54A;
+    text-decoration: none;
+}
+nav a:hover {
+    color: #F7F3EA;
 }
