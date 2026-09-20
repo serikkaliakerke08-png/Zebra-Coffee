@@ -1,5 +1,5 @@
 .info-block {
-    margin-bottom: 30px;
+    margin-bottom: 0;
     padding: 16px;
     border: 2px solid #A9D6F5;
     border-radius: 8px;
@@ -15,13 +15,36 @@
 
 /* .photo-card: class selector, matches every figure on the visit page */
 .photo-card {
-    margin: 0 0 20px 0;
+    margin: 0;
     padding: 12px;
     border: 2px solid #1F4E8C;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 200px;
 }
 
+/* .photo-gallery: flex fits here because the cards sit in one row, grow, shrink and wrap */
 .photo-gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+        grid-column: 1 / -1;
+}
+
+/* .photo-gallery h2: the heading takes the full row, so the photos start below it */
+.photo-gallery h2 {
+    flex: 0 0 100%;
+}
+
+/* .visit-layout: grid fits better than flexbox because the blocks sit in both rows and columns, and one block spans both columns */
+.visit-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+/* .visit-layout > hr: child selector, matches the hr placed directly inside main */
+.visit-layout > hr {
+    display: none;
 }
