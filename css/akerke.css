@@ -94,3 +94,8 @@ input[type="email"] {
     border: 2px solid #1F4E8C;
     padding: 4px;
 }
+
+input:focus {
+    background-color: #A9D6F5;
+    outline: 3px solid #1F4E8C;
+}
