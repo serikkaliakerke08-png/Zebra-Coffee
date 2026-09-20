@@ -8,6 +8,8 @@ body {
     background-color: #A9D6F5;
     color: #1F4E8C;
     font-family: Verdana, Geneva, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 header {
@@ -42,4 +44,28 @@ nav a {
 }
 nav a:hover {
     color: #F7F3EA;
+}
+
+footer {
+    background-color: #1F4E8C;
+    color: #F7F3EA;
+    padding: 20px;
+    text-align: center;
+}
+
+/* footer a: descendant selector, matches links inside the footer */
+footer a {
+    color: #FFD54A;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #F7F3EA;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
