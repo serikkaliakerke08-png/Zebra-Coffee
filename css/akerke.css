@@ -4,3 +4,11 @@
     border: 2px solid #A9D6F5;
     border-radius: 8px;
 }
+
+#location {
+    border-left: 6px solid #1F4E8C;
+}
+
+#contact-form {
+    border-left: 6px solid #1F4E8C;
+}
