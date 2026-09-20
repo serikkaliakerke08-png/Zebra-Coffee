@@ -114,3 +114,11 @@ footer {
     display: grid;
     place-items: center;
 }
+
+.jump-link {
+    text-decoration: underline;
+}
+
+.info-block a {
+    text-decoration: none;
+}
