@@ -99,3 +99,7 @@ input:focus {
     background-color: #A9D6F5;
     outline: 3px solid #1F4E8C;
 }
+
+nav li:first-child a {
+    font-weight: 700;
+}
