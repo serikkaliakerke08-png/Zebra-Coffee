@@ -69,3 +69,8 @@
     font-weight: 700;
     margin-right: 8px;
 }
+
+.phone-link {
+    white-space: nowrap;
+    font-weight: 700;
+}
