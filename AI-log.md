@@ -1,0 +1,1 @@
+I used AI to understand what was expected of me. The AI explained the concept and helped me understand the terminology. There were times when I couldn't figure out GitHub or an HTML file (for example, I asked: “Could you look at the PDF and briefly explain what is required of me?” or “Is there a problem with my GitHub? What should I do?”).
