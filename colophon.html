@@ -9,31 +9,50 @@
     <meta name="description" content="Information about the Zebra Coffee website project created for the Web Technologies course.">
     <meta name="author" content="Serikkali Akerke">
     <title>Zebra Coffee - Colophon</title>
+
+    <!-- Bootstrap 5.3.3 (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Our own stylesheets load after Bootstrap so our brand colours and fonts win the cascade -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/akerke.css">
 </head>
 
 <body>
 
-<header>
-    <h1>Colophon</h1>
+<header class="site-header text-white text-center py-4">
+    <!-- container-fluid: the header banner should reach both edges of the browser window; the page content further down uses .container to stay a comfortable reading width -->
+    <div class="container-fluid">
+        <h1 class="display-5 mb-0">
+            Colophon
+            <span class="badge bg-warning text-dark d-none d-md-inline-block align-middle ms-2">Astana</span>
+        </h1>
+    </div>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="visit.html">Visit</a></li>
-            <li><a href="colophon.html">Colophon</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="container-fluid justify-content-center">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-0" id="mainNav">
+                <ul class="navbar-nav gap-md-3 text-center mb-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="visit.html">Visit</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="colophon.html">Colophon</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 </header>
 
-<main>
+<main class="py-4">
+<div class="container">
 
-    <section>
+    <section class="mb-4">
         <h2>About the Project</h2>
 
-        <p>
+        <p class="lead">
             This website was created as a Web Technologies project about
             a real coffee shop in Astana. The selected organization is
             Zebra Coffee, located on Mangilik El Avenue, 56. The purpose
@@ -54,7 +73,7 @@
         </p>
     </section>
 
-    <section>
+    <section class="mb-4">
         <h2>Research and Sources</h2>
 
         <p>
@@ -73,14 +92,18 @@
         </ul>
     </section>
 
-    <section>
+    <section class="mb-4">
         <h2>Technology Used</h2>
 
         <p>
-            The website was built using HTML. The project does not use
-            CSS, JavaScript, frameworks, templates, or site builders.
-            HTML semantic elements are used to structure the content
-            and give meaning to different sections of each page.
+            The website was built using HTML. Layout, the grid, responsive
+            behaviour, navigation, typography and buttons are now built with
+            the Bootstrap framework; our own CSS stayed as a small correction
+            layer for brand colours and fonts. The project does not use
+            any other CSS framework, templates, or site builders, and no
+            JavaScript of our own beyond the Bootstrap bundle. HTML semantic
+            elements are used to structure the content and give meaning to
+            different sections of each page.
         </p>
 
         <p>The website contains four HTML pages:</p>
@@ -95,7 +118,7 @@
         </ol>
     </section>
 
-    <section>
+    <section class="mb-4">
 
         <!-- A definition list is used here because each label (Name, Group, Course, Project) pairs directly with one value. -->
         <h2>Author Information</h2>
@@ -115,7 +138,7 @@
         </dl>
     </section>
 
-    <section>
+    <section class="mb-4">
         <h2>Project Reflection</h2>
 
         <p>
@@ -128,11 +151,15 @@
             information and arranging it into a clear website structure.
             The project also showed how forms can be built with different
             input types and labels. Working without CSS made it easier
-            to concentrate on HTML structure and semantic meaning.
+            to concentrate on HTML structure and semantic meaning. In this
+            assignment, rebuilding the layout with Bootstrap showed how much
+            of the page - the grid, the navigation, the buttons and the
+            responsive behaviour - can come from a framework, leaving our
+            own stylesheet to handle only brand colours and fonts.
         </p>
     </section>
 
-    <section>
+    <section class="mb-4">
     <h2>Website Development</h2>
 
     <p>
@@ -159,28 +186,34 @@
         The browser may show a result such as:
         <samp>Page loaded successfully.</samp>
     </p>
-    
-</section>
 
+    </section>
+
+</div>
 </main>
 
 
 
-<footer>
-    <p>Zebra Coffee</p>
+<footer class="site-footer text-white text-center py-4">
+    <div class="container">
+        <p class="mb-1">Zebra Coffee</p>
 
-    <p>
-        <strong>Address:</strong>
-        Mangilik El Avenue, 56, Astana, Kazakhstan
-    </p>
+        <p class="mb-1">
+            <strong>Address:</strong>
+            Mangilik El Avenue, 56, Astana, Kazakhstan
+        </p>
 
-    <p>
-        <strong>Phone:</strong>
-        <a href="tel:+77071736505">+7 (707) 173-65-05</a>
-    </p>
+        <p class="mb-1">
+            <strong>Phone:</strong>
+            <a class="text-warning fw-bold text-nowrap" href="tel:+77071736505">+7 (707) 173-65-05</a>
+        </p>
 
-    <p>&copy; 2026 Zebra Coffee Website Project</p>
+        <p class="small text-white-50 mb-0">&copy; 2026 Zebra Coffee Website Project</p>
+    </div>
 </footer>
+
+<!-- Bootstrap 5.3.3 JS bundle (includes Popper) - needed for the navbar toggler -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
