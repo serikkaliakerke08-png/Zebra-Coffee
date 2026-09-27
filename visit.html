@@ -9,41 +9,52 @@
     <meta name="description" content="Visit Zebra Coffee in Astana and find information about its location, opening hours, contact details, photos, and visitor form.">
     <meta name="author" content="Serikkali Akerke">
     <title>Visit - Zebra Coffee</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/akerke.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/akerke.css">
 
-    <!-- This style block exists only to show the cascade: it overrides the font-size of h2 + p from akerke.css, because it comes after the link tags. -->
-    <style>
-        h2 + p {
-            font-size: 20px;
-        }
-    </style>
-</head>
+    <!-- Bootstrap 5.3.3 (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Our own stylesheets load after Bootstrap so our brand colours and fonts win the cascade -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/akerke.css">
 </head>
 
 <body>
 
-<header>
-    <h1>Visit Zebra Coffee</h1>
+<header class="site-header text-white text-center py-4">
+    <!-- container-fluid: the header banner should reach both edges of the browser window; the page content further down uses .container to stay a comfortable reading width -->
+    <div class="container-fluid">
+        <h1 class="display-5 mb-0">
+            Visit Zebra Coffee
+            <span class="badge bg-warning text-dark d-none d-md-inline-block align-middle ms-2">Astana</span>
+        </h1>
+    </div>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="visit.html">Visit</a></li>
-            <li><a href="colophon.html">Colophon</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="container-fluid justify-content-center">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-0" id="mainNav">
+                <ul class="navbar-nav gap-md-3 text-center mb-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="visit.html">Visit</a></li>
+                    <li class="nav-item"><a class="nav-link" href="colophon.html">Colophon</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 </header>
 
-<main class="visit-layout">
+<main class="py-4">
+<div class="container">
+<div class="row g-4">
 
-    <section id="location" class="info-block">
+    <div class="col-12 col-md-6">
+    <section id="location" class="h-100 p-3 border border-start border-5 border-primary rounded-3 bg-white">
         <h2>Location</h2>
 
-        <p>
+        <p class="lead">
             Zebra Coffee is located in Astana at Mangilik El Avenue, 56.
             The coffee shop is situated near the EXPO area, making it a
             convenient spot for visitors who spend time in this part of
@@ -63,16 +74,19 @@
             Zebra Coffee<br>
             Mangilik El Avenue 56<br>
             Astana, Kazakhstan<br>
-            Phone: <a class="phone-link" href="tel:+77071736505">+7 (707) 173-65-05</a>
+            Phone: <a class="text-nowrap fw-bold" href="tel:+77071736505">+7 (707) 173-65-05</a>
         </address>
     </section>
+    </div>
 
-    <hr>
+    <!-- The CSS used to hide this divider unconditionally (display: none) because the two-column CSS grid put Location and Hours side by side; the Bootstrap row/col grid keeps them side by side too, so the divider stays hidden with the d-none utility instead of a custom rule. -->
+    <hr class="d-none">
 
-    <section id="hours" class="info-block">
+    <div class="col-12 col-md-6">
+    <section id="hours" class="h-100 p-3 border border-start border-5 border-primary rounded-3 bg-white">
         <h2>Opening Hours</h2>
 
-        <p>
+        <p class="lead">
             Zebra Coffee is open every day from 08:00 to 23:00.
             These hours give visitors enough time to enjoy coffee,
             tea and specialty drinks during the day and evening.
@@ -83,57 +97,61 @@
         </ul>
 
         <p>
-            <a href="#location" class="jump-link">Go to Location</a>
-            <a href="#contact-form" class="jump-link">Go to Visitor Contact</a>
+            <a href="#location" class="btn btn-sm btn-outline-primary me-2">Go to Location</a>
+            <a href="#contact-form" class="btn btn-sm btn-outline-primary">Go to Visitor Contact</a>
         </p>
+
+        <button type="button" class="btn btn-secondary d-none d-md-inline-block mt-2" disabled>Table Booking &ndash; Coming Soon</button>
     </section>
+    </div>
 
     <!-- A figure is used for each photo because it connects the image with its caption. -->
-    <section class="info-block photo-gallery">
+    <div class="col-12">
+    <section class="p-3 border rounded-3 bg-white">
         <h2>Photos</h2>
 
-        <figure class="photo-card">
-            <img src="images/zebra-coffee-1.jpg"
-                 alt="Zebra Coffee cafe in Astana">
-            <figcaption>Zebra Coffee in Astana.</figcaption>
-        </figure>
+        <!-- Nesting: this row sits inside the col-12 column above, showing a row nested inside a column -->
+        <div class="row row-cols-1 row-cols-md-3 g-3">
 
-        <figure class="photo-card">
-            <img src="images/zebra-coffee-2.jpg"
-                 alt="Interior of Zebra Coffee">
-            <figcaption>Interior of the cafe.</figcaption>
-        </figure>
+            <div class="col">
+                <figure class="position-relative border rounded-3 p-2 h-100 mb-0">
+                    <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Zebra Coffee</span>
+                    <img src="images/zebra-coffee-1.jpg"
+                         class="img-fluid rounded"
+                         alt="Zebra Coffee cafe in Astana">
+                    <figcaption class="mt-2">Zebra Coffee in Astana.</figcaption>
+                </figure>
+            </div>
 
-        <figure class="photo-card">
-            <img src="images/zebra-coffee-3.jpg"
-                 alt="Zebra Coffee location near EXPO">
-            <figcaption>Zebra Coffee near the EXPO area.</figcaption>
-        </figure>
+            <div class="col">
+                <figure class="position-relative border rounded-3 p-2 h-100 mb-0">
+                    <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Zebra Coffee</span>
+                    <img src="images/zebra-coffee-2.jpg"
+                         class="img-fluid rounded"
+                         alt="Interior of Zebra Coffee">
+                    <figcaption class="mt-2">Interior of the cafe.</figcaption>
+                </figure>
+            </div>
+
+            <div class="col">
+                <figure class="position-relative border rounded-3 p-2 h-100 mb-0">
+                    <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Zebra Coffee</span>
+                    <img src="images/zebra-coffee-3.jpg"
+                         class="img-fluid rounded"
+                         alt="Zebra Coffee location near EXPO">
+                    <figcaption class="mt-2">Zebra Coffee near the EXPO area.</figcaption>
+                </figure>
+            </div>
+
+        </div>
     </section>
+    </div>
 
-    <aside class="contact-panel">
-    <h2>Contact Information</h2> 
- 
-    <p> 
-        <strong>Address:</strong> 
-        Mangilik El Avenue, 56, Astana, Kazakhstan 
-    </p> 
- 
-    <p> 
-        <strong>Phone:</strong> 
-        <a class="phone-link" href="tel:+77071736505">+7 (707) 173-65-05</a> 
-    </p>
-
-    <p>
-        <strong>Email:</strong>
-        <a href="mailto:serikkaliakerke08@gmail.com">Contact the author</a>
-    </p>
-</aside>
-
-    <section id="contact-form" class="info-block">
+    <div class="col-12 col-lg-8">
+    <section id="contact-form" class="p-3 border border-start border-5 border-primary rounded-3 bg-white">
         <h2>Visitor Contact</h2>
 
-        <p>
+        <p class="lead">
             Use this form to provide your contact information and
             details about your planned visit to Zebra Coffee.
         </p>
@@ -144,106 +162,155 @@
             <fieldset>
                 <legend>Visitor Information</legend>
 
-                <label class="form-label">Name:</label>
-                <input type="text"
-                       id="name"
-                       name="name"
-                       placeholder="Enter your name"
-                       required>
-                <br><br>
+                <div class="row g-3">
 
-                <label for="email">Email:</label>
-                <input type="email"
-                       id="email"
-                       name="email"
-                       placeholder="Enter your email"
-                       required>
-                <br><br>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label" for="name">Name:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="name"
+                               name="name"
+                               placeholder="Enter your name"
+                               required>
+                    </div>
 
-                <label for="phone">Phone:</label>
-                <input type="tel"
-                       id="phone"
-                       name="phone"
-                       placeholder="+7..."
-                       required>
-                <br><br>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label" for="email">Email:</label>
+                        <input type="email"
+                               class="form-control"
+                               id="email"
+                               name="email"
+                               placeholder="Enter your email"
+                               required>
+                    </div>
 
-                <label for="guests">Number of guests:</label>
-                <input type="number"
-                       id="guests"
-                       name="guests"
-                       min="1"
-                       max="20"
-                       required>
-                <br><br>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label" for="phone">Phone:</label>
+                        <input type="tel"
+                               class="form-control"
+                               id="phone"
+                               name="phone"
+                               placeholder="+7..."
+                               required>
+                    </div>
 
-                <label for="date">Visit date:</label>
-                <input type="date"
-                       id="date"
-                       name="date"
-                       required>
-                <br><br>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label" for="guests">Number of guests:</label>
+                        <input type="number"
+                               class="form-control"
+                               id="guests"
+                               name="guests"
+                               min="1"
+                               max="20"
+                               required>
+                    </div>
 
-                <p>Preferred contact method:</p>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label" for="date">Visit date:</label>
+                        <input type="date"
+                               class="form-control"
+                               id="date"
+                               name="date"
+                               required>
+                    </div>
 
-                <input type="radio"
-                       id="email-contact"
-                       name="contact"
-                       value="email">
-                <label for="email-contact">Email</label>
+                    <div class="col-12">
+                        <p class="mb-2">Preferred contact method:</p>
 
-                <input type="radio"
-                       id="phone-contact"
-                       name="contact"
-                       value="phone">
-                <label for="phone-contact">Phone</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                   id="email-contact"
+                                   name="contact"
+                                   value="email">
+                            <label class="form-check-label" for="email-contact">Email</label>
+                        </div>
 
-                <br><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                   id="phone-contact"
+                                   name="contact"
+                                   value="phone">
+                            <label class="form-check-label" for="phone-contact">Phone</label>
+                        </div>
+                    </div>
 
-                <input type="checkbox"
-                       id="newsletter"
-                       name="newsletter">
-                <label for="newsletter">Receive updates</label>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox"
+                                   id="newsletter"
+                                   name="newsletter">
+                            <label class="form-check-label" for="newsletter">Receive updates</label>
+                        </div>
+                    </div>
 
-                <br><br>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label" for="type">Visit type:</label>
+                        <select class="form-select" id="type" name="type">
+                            <option value="coffee">Coffee visit</option>
+                            <option value="meeting">Meeting</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
 
-                <label for="type">Visit type:</label>
-                <select id="type" name="type">
-                    <option value="coffee">Coffee visit</option>
-                    <option value="meeting">Meeting</option>
-                    <option value="other">Other</option>
-                </select>
+                    <div class="col-12">
+                        <label class="form-label" for="message">Message:</label>
+                        <textarea class="form-control"
+                                  id="message"
+                                  name="message"
+                                  placeholder="Write your message"></textarea>
+                    </div>
 
-                <br><br>
+                    <div class="col-12">
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                        <input type="reset" value="Reset" class="btn btn-outline-secondary">
+                    </div>
 
-                <label for="message">Message:</label><br>
-
-                <textarea id="message"
-                          name="message"
-                          placeholder="Write your message"></textarea>
-
-                <br><br>
-
-                
-                <input type="submit" value="Submit">
-                <input type="reset" value="Reset">
-
+                </div>
             </fieldset>
         </form>
     </section>
+    </div>
+
+</div>
+</div>
+
+<!-- .contact-panel keeps position: fixed with Bootstrap's own position utilities (position-fixed, bottom-0, end-0) instead of a hand-written rule; only the exact pixel width and the translucent cream background stay as small custom corrections. -->
+<aside class="contact-panel position-fixed bottom-0 end-0 m-3 p-3 border border-2 border-primary rounded-3">
+<h2>Contact Information</h2>
+
+<p class="mb-1">
+    <strong>Address:</strong>
+    Mangilik El Avenue, 56, Astana, Kazakhstan
+</p>
+
+<p class="mb-1">
+    <strong>Phone:</strong>
+    <a class="text-nowrap fw-bold" href="tel:+77071736505">+7 (707) 173-65-05</a>
+</p>
+
+<p class="mb-0">
+    <strong>Email:</strong>
+    <a href="mailto:serikkaliakerke08@gmail.com">Contact the author</a>
+</p>
+</aside>
 
 </main>
 
-<footer>
-    <p>Zebra Coffee, Mangilik El Avenue 56, Astana</p>
+<footer class="site-footer text-white text-center py-4">
+    <div class="container">
+        <p class="mb-1">Zebra Coffee, Mangilik El Avenue 56, Astana</p>
 
-    <p>
-        Phone:
-        <a class="phone-link" href="tel:+77071736505">+7 (707) 173-65-05</a>
-    </p>
+        <p class="mb-1">
+            Phone:
+            <a class="text-warning fw-bold text-nowrap" href="tel:+77071736505">+7 (707) 173-65-05</a>
+        </p>
 
-    <p>&copy; 2026 Zebra Coffee Website Project</p>
+        <p class="small text-white-50 mb-0">&copy; 2026 Zebra Coffee Website Project</p>
+    </div>
 </footer>
+
+<!-- Bootstrap 5.3.3 JS bundle (includes Popper) - needed for the navbar toggler -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
