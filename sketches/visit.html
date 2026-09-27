@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Author: Serikkali Akerke -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visit Zebra Coffee in Astana and find information about its location, opening hours, contact details, photos, and visitor form.">
+    <meta name="author" content="Serikkali Akerke">
+    <title>Visit - Zebra Coffee</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/akerke.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/akerke.css">
+
+    <!-- This style block exists only to show the cascade: it overrides the font-size of h2 + p from akerke.css, because it comes after the link tags. -->
+    <style>
+        h2 + p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+</head>
+
+<body>
+
+<header>
+    <h1>Visit Zebra Coffee</h1>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="visit.html">Visit</a></li>
+            <li><a href="colophon.html">Colophon</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="visit-layout">
+
+    <section id="location" class="info-block">
+        <h2>Location</h2>
+
+        <p>
+            Zebra Coffee is located in Astana at Mangilik El Avenue, 56.
+            The coffee shop is situated near the EXPO area, making it a
+            convenient spot for visitors who spend time in this part of
+            the city. The location is suitable for meeting friends,
+            having coffee, taking a short break or spending time in a
+            comfortable cafe environment. Visitors can choose from
+            different coffee drinks, tea and specialty beverages from
+            the menu. The cafe can be contacted by phone for additional
+            information. The phone number is +7 (707) 173-65-05.
+            Before visiting, customers can check the current opening
+            hours and menu information. The EXPO location also makes
+            Zebra Coffee a convenient option for people visiting nearby
+            attractions and buildings.
+        </p>
+
+        <address>
+            Zebra Coffee<br>
+            Mangilik El Avenue 56<br>
+            Astana, Kazakhstan<br>
+            Phone: <a class="phone-link" href="tel:+77071736505">+7 (707) 173-65-05</a>
+        </address>
+    </section>
+
+    <hr>
+
+    <section id="hours" class="info-block">
+        <h2>Opening Hours</h2>
+
+        <p>
+            Zebra Coffee is open every day from 08:00 to 23:00.
+            These hours give visitors enough time to enjoy coffee,
+            tea and specialty drinks during the day and evening.
+        </p>
+
+        <ul>
+            <li>Monday – Sunday: 08:00 – 23:00</li>
+        </ul>
+
+        <p>
+            <a href="#location" class="jump-link">Go to Location</a>
+            <a href="#contact-form" class="jump-link">Go to Visitor Contact</a>
+        </p>
+    </section>
+
+    <!-- A figure is used for each photo because it connects the image with its caption. -->
+    <section class="info-block photo-gallery">
+        <h2>Photos</h2>
+
+        <figure class="photo-card">
+            <img src="images/zebra-coffee-1.jpg"
+                 alt="Zebra Coffee cafe in Astana">
+            <figcaption>Zebra Coffee in Astana.</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <img src="images/zebra-coffee-2.jpg"
+                 alt="Interior of Zebra Coffee">
+            <figcaption>Interior of the cafe.</figcaption>
+        </figure>
+
+        <figure class="photo-card">
+            <img src="images/zebra-coffee-3.jpg"
+                 alt="Zebra Coffee location near EXPO">
+            <figcaption>Zebra Coffee near the EXPO area.</figcaption>
+        </figure>
+    </section>
+
+    <aside class="contact-panel">
+    <h2>Contact Information</h2> 
+ 
+    <p> 
+        <strong>Address:</strong> 
+        Mangilik El Avenue, 56, Astana, Kazakhstan 
+    </p> 
+ 
+    <p> 
+        <strong>Phone:</strong> 
+        <a class="phone-link" href="tel:+77071736505">+7 (707) 173-65-05</a> 
+    </p>
+
+    <p>
+        <strong>Email:</strong>
+        <a href="mailto:serikkaliakerke08@gmail.com">Contact the author</a>
+    </p>
+</aside>
+
+    <section id="contact-form" class="info-block">
+        <h2>Visitor Contact</h2>
+
+        <p>
+            Use this form to provide your contact information and
+            details about your planned visit to Zebra Coffee.
+        </p>
+
+        <form method="post" action="#">
+            <!-- The form uses POST because visitor information should be submitted as form data. -->
+
+            <fieldset>
+                <legend>Visitor Information</legend>
+
+                <label class="form-label">Name:</label>
+                <input type="text"
+                       id="name"
+                       name="name"
+                       placeholder="Enter your name"
+                       required>
+                <br><br>
+
+                <label for="email">Email:</label>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       placeholder="Enter your email"
+                       required>
+                <br><br>
+
+                <label for="phone">Phone:</label>
+                <input type="tel"
+                       id="phone"
+                       name="phone"
+                       placeholder="+7..."
+                       required>
+                <br><br>
+
+                <label for="guests">Number of guests:</label>
+                <input type="number"
+                       id="guests"
+                       name="guests"
+                       min="1"
+                       max="20"
+                       required>
+                <br><br>
+
+                <label for="date">Visit date:</label>
+                <input type="date"
+                       id="date"
+                       name="date"
+                       required>
+                <br><br>
+
+                <p>Preferred contact method:</p>
+
+                <input type="radio"
+                       id="email-contact"
+                       name="contact"
+                       value="email">
+                <label for="email-contact">Email</label>
+
+                <input type="radio"
+                       id="phone-contact"
+                       name="contact"
+                       value="phone">
+                <label for="phone-contact">Phone</label>
+
+                <br><br>
+
+                <input type="checkbox"
+                       id="newsletter"
+                       name="newsletter">
+                <label for="newsletter">Receive updates</label>
+
+                <br><br>
+
+                <label for="type">Visit type:</label>
+                <select id="type" name="type">
+                    <option value="coffee">Coffee visit</option>
+                    <option value="meeting">Meeting</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <br><br>
+
+                <label for="message">Message:</label><br>
+
+                <textarea id="message"
+                          name="message"
+                          placeholder="Write your message"></textarea>
+
+                <br><br>
+
+                
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+
+            </fieldset>
+        </form>
+    </section>
+
+</main>
+
+<footer>
+    <p>Zebra Coffee, Mangilik El Avenue 56, Astana</p>
+
+    <p>
+        Phone:
+        <a class="phone-link" href="tel:+77071736505">+7 (707) 173-65-05</a>
+    </p>
+
+    <p>&copy; 2026 Zebra Coffee Website Project</p>
+</footer>
+
+</body>
+</html>
